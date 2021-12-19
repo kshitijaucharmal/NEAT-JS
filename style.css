@@ -59,7 +59,7 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
-} 
+}
 
 html, body {
   height: 100%;
@@ -68,9 +68,9 @@ html, body {
 body {
   /*background-color: lightblue;*/
   /* Dusty Green */
-  background: #093028; 
+  /* background: #093028;
   background: -webkit-linear-gradient(to left, #237A57, #093028);
-  background: linear-gradient(to left, #237A57, #093028);
+  background: linear-gradient(to left, #237A57, #093028); */
 
   /* Space Black */
   /*background: #000000;
@@ -78,9 +78,15 @@ body {
   background: linear-gradient(to left, #434343, #000000);*/
 
   /* Venice Blue */
-  background: #085078;
+  /* background: #085078;
   background: -webkit-linear-gradient(to top left, #85D8CE, #085078);
-  background: linear-gradient(to top left, #85D8CE, #085078);
+  background: linear-gradient(to top left, #85D8CE, #085078); */
+
+  /* Celectial */
+  background: #C33764;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #1D2671, #C33764); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 
 
   margin: 0;
@@ -96,7 +102,7 @@ body {
 canvas {
   border-radius: 12px;
   border:white 3px solid;
-  box-shadow: 1px 2px 22px 0px rgba(0, 0, 0,0.95);
+  box-shadow: 2px 2px 44px 0px rgba(0, 0, 0,0.95);
 }
 
 @font-face {

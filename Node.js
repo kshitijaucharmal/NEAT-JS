@@ -5,6 +5,9 @@ class Node{
     this.sum = 0
     this.outputValue = 0
     this.inGenes = []
+
+    // for showing
+    this.pos = createVector(0, 0);
   }
 
   clone(){
