@@ -21,4 +21,13 @@ class Gene{
     this.out_node.number + '(' + this.out_node.layer + ')',
     this.weight, this.enabled);
   }
+
+  showGene(){
+    let s = (this.inno+'] '+
+    this.in_node.number + '(' + this.in_node.layer + ')' + ' -> ' +
+    this.out_node.number + '(' + this.out_node.layer + ') ' +
+    this.weight + " " + this.enabled + "\n");
+
+    return s;
+  }
 }

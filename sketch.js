@@ -12,11 +12,11 @@ function setup(){
 
 function draw(){
   background(51);
+  g.showGenome();
 }
 
 function keyPressed(){
   if(key == 'c'){
     g.add_gene();
-    g.printGenome();
   }
 }

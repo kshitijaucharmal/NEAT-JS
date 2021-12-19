@@ -24,7 +24,7 @@ class Genome{
 
   exists(x){
     for(let i = 0; i < this.genes.length; i++){
-      if(x.inno == this.genes[i]){
+      if(x.inno == this.genes[i].inno){
         return true;
       }
     }
@@ -74,5 +74,21 @@ class Genome{
       this.genes[i].printGene();
     }
     console.log("--------------------------------------------------");
+  }
+
+  showGenome(){
+    let s = "Genome\n--------------------------------------------------\n";
+    for(let i = 0; i < this.genes.length; i++){
+      s += this.genes[i].showGene();
+    }
+    s += "--------------------------------------------------";
+
+    push();
+    fill(255);
+    noStroke();
+    textSize(14);
+    textAlign(CENTER, CENTER);
+    text(s, width/2, height/2);
+    pop();
   }
 }
