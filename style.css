@@ -101,7 +101,7 @@ body {
 
 canvas {
   border-radius: 12px;
-  border:white 3px solid;
+  /* border:white 3px solid; */
   box-shadow: 2px 2px 44px 0px rgba(0, 0, 0,0.95);
 }
 

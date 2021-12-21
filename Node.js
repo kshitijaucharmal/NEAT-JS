@@ -15,9 +15,9 @@ class Node{
 
   config(){
       let startx = 50;
-      let endx = width - 50;
+      let endx = width - startx;
       let starty = 100;
-      let endy = height - 100;
+      let endy = height - starty;
       let gapx = (endx - startx) / (this.globals.input_layer + this.globals.output_layer);
       let gapy = 100;
 
@@ -30,7 +30,7 @@ class Node{
           this.pos.y = (this.number - this.globals.inputs) * starty + gapy;
       }
       else{
-          this.pos.x = this.layer * gapx;
+          this.pos.x = this.layer * gapx + startx;
           this.pos.y = random(starty, endy);
       }
   }
@@ -40,12 +40,12 @@ class Node{
       stroke(0);
       strokeWeight(2);
       fill(255);
-      circle(this.pos.x, this.pos.y, 30);
+      circle(this.pos.x, this.pos.y, 22);
       noStroke();
       fill(0);
       textAlign(CENTER,CENTER);
-      textSize(24);
-      text(this.number, this.pos.x, this.pos.y);
+      textSize(15);
+      text(this.layer, this.pos.x, this.pos.y);
       pop();
   }
 

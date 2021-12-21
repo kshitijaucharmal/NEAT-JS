@@ -9,8 +9,7 @@ function setup(){
 }
 
 function draw(){
-  background(51);
-  g.showGenome();
+  background(225);
   g.show();
 }
 
