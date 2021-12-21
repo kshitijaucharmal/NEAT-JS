@@ -1,7 +1,8 @@
 class GeneH{
-  constructor(inputs, outputs){
-    this.inputs = inputs;
-    this.outputs = outputs;
+  constructor(){
+    this.globals = new globals();
+    this.inputs = this.globals.inputs;
+    this.outputs = this.globals.outputs;
     this.global_inno = 0;
     this.allGenes = []
   }

@@ -5,20 +5,15 @@ class Genome{
     this.outputs = gh.outputs;
     this.total_nodes = 0
     this.highest_inno = 0;
-    this.input_layer = 0;
-    this.output_layer = 0;
     this.nodes = [];
     this.genes = [];
-
-    if(this.input_layer == this.output_layer){
-      this.output_layer = this.input_layer + 10;
-    }
+    this.globals = new globals();
 
     for(let i = 0; i < this.inputs; i++){
-      this.nodes.push(new Node(this.total_nodes++, this.input_layer));
+      this.nodes.push(new Node(this.total_nodes++, this.globals.input_layer));
     }
     for(let i = 0; i < this.outputs; i++){
-      this.nodes.push(new Node(this.total_nodes++, this.output_layer));
+      this.nodes.push(new Node(this.total_nodes++, this.globals.output_layer));
     }
   }
 
@@ -68,6 +63,22 @@ class Genome{
     this.connect_nodes(n1, n2);
   }
 
+  add_node(){
+      if(this.genes.length == 0) this.add_gene();
+
+      let n = new Node(this.total_nodes++, int(random(this.globals.input_layer+1, this.globals.output_layer)));
+      let g = this.genes[int(random(this.genes.length))];
+
+      this.connect_nodes(g.in_node, n);
+      this.connect_nodes(n, g.out_node);
+
+      this.genes[this.genes.length - 1].weight = g.weight;
+      this.genes[this.genes.length - 2].weight = 1;
+      g.enabled = false;
+
+      this.nodes.push(n);
+  }
+
   printGenome(){
     console.log("--------------------------------------------------");
     for(let i = 0; i < this.genes.length; i++){
@@ -90,5 +101,14 @@ class Genome{
     textAlign(CENTER, CENTER);
     text(s, width/2, height/2);
     pop();
+  }
+
+  show(){
+      for(let i = 0; i < this.genes.length; i++){
+          this.genes[i].show();
+      }
+      for(let i = 0; i < this.nodes.length; i++){
+          this.nodes[i].show();
+      }
   }
 }

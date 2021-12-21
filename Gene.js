@@ -30,4 +30,16 @@ class Gene{
 
     return s;
   }
+
+  show(){
+      push();
+      strokeWeight(abs(this.weight) * 4);
+      if(this.enabled){
+          if(this.weight < 0) stroke(0, 0, 255);
+          else stroke(255, 0, 0);
+      }
+      else stroke(0, 255, 0);
+      line(this.in_node.pos.x, this.in_node.pos.y, this.out_node.pos.x, this.out_node.pos.y);
+      pop();
+  }
 }
