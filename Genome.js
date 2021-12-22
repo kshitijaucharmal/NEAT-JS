@@ -3,7 +3,7 @@ class Genome{
     this.gh = gh;
     this.inputs = gh.inputs;
     this.outputs = gh.outputs;
-    this.total_nodes = 0
+    this.total_nodes = 0;
     this.highest_inno = 0;
     this.nodes = [];
     this.genes = [];
@@ -49,6 +49,33 @@ class Genome{
       this.genes.push(x);
       n2.inGenes.push(x);
     }
+  }
+
+  calculate_outputs(inputs){
+      if(inputs.length != this.globals.inputs){
+          console.log("Wrong length in[uts]");
+          return;
+      }
+
+      for(let i = 0; i< this.globals.inputs; i++){
+          this.nodes[i].outputValue = inputs[i].toFixed(4);
+          this.nodes[i].lastOutputValue = inputs[i].toFixed(4);
+      }
+      let outs = [];
+
+      for(let i = this.globals.inputs+this.globals.outputs; i < this.nodes.length; i++){
+          this.nodes[i].calculate();
+      }
+
+      for(let i = this.globals.inputs; i < this.globals.inputs+this.globals.outputs; i++){
+          this.nodes[i].calculate();
+          outs.push(this.nodes[i].outputValue);
+      }
+
+      for(let i = 0; i < this.nodes.length; i++){
+          this.nodes[i].reset();
+      }
+      return outs;
   }
 
   add_gene(){

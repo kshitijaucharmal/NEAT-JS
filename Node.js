@@ -4,6 +4,7 @@ class Node{
     this.layer = l;
     this.sum = 0
     this.outputValue = 0
+    this.lastOutputValue = 0;
     this.inGenes = []
     this.globals = new globals();
 
@@ -35,6 +36,23 @@ class Node{
       }
   }
 
+  calculate(){
+      if(this.layer == this.globals.input_layer){
+          return;
+      }
+
+      for(let i = 0; i < this.inGenes.length; i++){
+          if(this.inGenes[i].enabled)
+            this.sum += this.inGenes[i].in_node.outputValue * this.inGenes[i].weight;
+      }
+      this.outputValue = this.activate(this.sum).toFixed(4);
+      this.lastOutputValue = this.outputValue;
+  }
+
+  activate(x){
+      return 1 / ( 1 + exp(-x));
+  }
+
   show(){
       push();
       stroke(0);
@@ -46,7 +64,13 @@ class Node{
       textAlign(CENTER,CENTER);
       textSize(15);
       text(this.layer, this.pos.x, this.pos.y);
+      textSize(10);
+      text(this.lastOutputValue, this.pos.x, this.pos.y + 22);
       pop();
+  }
+
+  reset(){
+      this.outputValue = 0;
   }
 
   clone(){
