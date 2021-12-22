@@ -71,6 +71,7 @@ class Node{
 
   reset(){
       this.outputValue = 0;
+      this.sum = 0;
   }
 
   clone(){
