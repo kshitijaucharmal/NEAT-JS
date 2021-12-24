@@ -122,7 +122,7 @@ class Genome{
     s += "--------------------------------------------------";
 
     push();
-    fill(255);
+    fill(0);
     noStroke();
     textSize(14);
     textAlign(CENTER, CENTER);

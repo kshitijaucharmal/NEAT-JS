@@ -14,8 +14,9 @@ function setup(){
 }
 
 function draw(){
-  background(225);
+  background(255);
   g.show();
+  g.showGenome();
 }
 
 function keyPressed(){

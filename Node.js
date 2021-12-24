@@ -63,7 +63,7 @@ class Node{
       fill(0);
       textAlign(CENTER,CENTER);
       textSize(15);
-      text(this.layer, this.pos.x, this.pos.y);
+      text(this.number, this.pos.x, this.pos.y);
       textSize(10);
       text(this.lastOutputValue, this.pos.x, this.pos.y + 22);
       pop();
