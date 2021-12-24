@@ -5,7 +5,8 @@ let g;
 let ins = [];
 
 function setup(){
-  createCanvas(500, 500);
+  let myCanvas = createCanvas(500, 500);
+  myCanvas.parent("GameCanvas")
   gh = new GeneH();
   g = new Genome(gh);
   for(let i = 0; i< 4; i++){
