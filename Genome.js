@@ -58,8 +58,8 @@ class Genome{
       }
 
       for(let i = 0; i< this.globals.inputs; i++){
-          this.nodes[i].outputValue = inputs[i].toFixed(4);
-          this.nodes[i].lastOutputValue = inputs[i].toFixed(4);
+          this.nodes[i].outputValue = inputs[i];
+          this.nodes[i].lastOutputValue = inputs[i];
       }
       let outs = [];
 

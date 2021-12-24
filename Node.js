@@ -45,7 +45,7 @@ class Node{
           if(this.inGenes[i].enabled)
             this.sum += this.inGenes[i].in_node.outputValue * this.inGenes[i].weight;
       }
-      this.outputValue = this.activate(this.sum).toFixed(4);
+      this.outputValue = this.activate(this.sum);
       this.lastOutputValue = this.outputValue;
   }
 
@@ -65,7 +65,7 @@ class Node{
       textSize(15);
       text(this.number, this.pos.x, this.pos.y);
       textSize(10);
-      text(this.lastOutputValue, this.pos.x, this.pos.y + 22);
+      text(this.lastOutputValue.toFixed(4), this.pos.x, this.pos.y + 22);
       pop();
   }
 
