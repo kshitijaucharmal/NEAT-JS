@@ -21,10 +21,15 @@
     	<div id="GameCanvas"></div>
     	<form name="f">
   			<!-- <div class="buttons"> -->
-            <button class="btn third">Add Connection</button>
-            <button class="btn third">Add Node</button>
-            <button class="btn third">Reset</button>
-            <!-- </div> -->
+            <button type="button" class="btn third" name="add_gene" onclick="g.add_gene()">Add Gene</button>
+            <button type="button" class="btn third" name="add_node" onclick="g.add_node()">Add Node</button>
+            <button type="button" class="btn third" name="give_output", onclick="give_outputs()">Give Output</button>
+
+            <!-- Show List : <label class="switch">
+                <input type="checkbox" name="show_list"/>
+                <span class="slider round"></span>
+            </label><br/><br/>
+            </div> -->
 
   			<!-- Pause/Unpause : <label class="switch">
 			  <input type="checkbox" name="pauseButton">

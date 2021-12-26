@@ -20,9 +20,13 @@ function draw(){
   g.showGenome();
 }
 
+function give_outputs(){
+    g.calculate_outputs(ins);
+}
+
 function keyPressed(){
   if(key == 'c'){
-    g.add_gene();
+      g.add_gene();
   }
 
   if(key == 'n'){
