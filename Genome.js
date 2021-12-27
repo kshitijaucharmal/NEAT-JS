@@ -114,7 +114,7 @@ class Genome{
     console.log("--------------------------------------------------");
   }
 
-  showGenome(){
+  showGenome(col){
     let s = "Genome\n--------------------------------------------------\n";
     for(let i = 0; i < this.genes.length; i++){
       s += this.genes[i].showGene();
@@ -122,7 +122,8 @@ class Genome{
     s += "--------------------------------------------------";
 
     push();
-    fill(0, 100);
+    rect(width/5, 0, 3*(width/5), height);
+    fill(col);
     noStroke();
     textSize(14);
     textAlign(CENTER, CENTER);
@@ -130,9 +131,9 @@ class Genome{
     pop();
   }
 
-  show(){
+  show(show_disabled){
       for(let i = 0; i < this.genes.length; i++){
-          this.genes[i].show();
+          this.genes[i].show(show_disabled);
       }
       for(let i = 0; i < this.nodes.length; i++){
           this.nodes[i].show();

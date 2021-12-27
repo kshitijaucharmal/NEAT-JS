@@ -4,10 +4,7 @@
         <meta charset="utf-8">
         <title>NEAT Algorithm</title>
 
-    	<!-- <div class="myclass"> Note: Changing the Q Learning <br>
-    		Parameters will only work <br/>
-    		after pausing the simulation <br/>
-    	</div> -->
+
         <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
         <script src="globals.js"></script>
         <script src="Node.js"></script>
@@ -18,18 +15,24 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <div class="myclass">
+            <button type="button" class="btn third" name="add_gene" onclick="add_gene()">Add Gene</button>
+            <button type="button" class="btn third" name="add_node" onclick="add_node()">Add Node</button>
+        </div>
     	<div id="GameCanvas"></div>
     	<form name="f">
   			<!-- <div class="buttons"> -->
-            <button type="button" class="btn third" name="add_gene" onclick="g.add_gene()">Add Gene</button>
-            <button type="button" class="btn third" name="add_node" onclick="g.add_node()">Add Node</button>
-            <button type="button" class="btn third" name="give_output", onclick="give_outputs()">Give Output</button>
+            <div class="myclass">
 
-            <!-- Show List : <label class="switch">
+            Show List : <label class="switch">
                 <input type="checkbox" name="show_list"/>
                 <span class="slider round"></span>
             </label><br/><br/>
-            </div> -->
+
+            Show Disabled : <label class="switch">
+                <input type="checkbox" name="show_disabled"/>
+                <span class="slider round"></span>
+            </label><br/><br/>
 
   			<!-- Pause/Unpause : <label class="switch">
 			  <input type="checkbox" name="pauseButton">
@@ -52,7 +55,10 @@
 			Play Yourself? : <label class="switch">
 			  <input type="checkbox" name="heuristic">
 			  <span class="slider round"></span>
-			</label><br/></div> -->
-    	</form>
+			</label><br/> -->
+
+            <button type="button" class="btn third" name="add_gene" onclick="location.reload()">Reset</button>
+        </form>
+        </div>
     </body>
 </html>

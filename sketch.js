@@ -16,21 +16,38 @@ function setup(){
 
 function draw(){
   background(255);
-  g.show();
-  g.showGenome();
+  g.show(f.show_disabled.checked);
+
+  // settings
+  if(f.show_list.checked){
+      col = 0;
+      g.showGenome(col);
+  }
 }
 
 function give_outputs(){
     g.calculate_outputs(ins);
 }
 
+function add_gene(){
+    g.add_gene();
+    g.calculate_outputs(ins);
+}
+
+function add_node(){
+    g.add_node();
+    g.calculate_outputs(ins);
+}
+
 function keyPressed(){
   if(key == 'c'){
       g.add_gene();
+      g.calculate_outputs(ins);
   }
 
   if(key == 'n'){
       g.add_node();
+      g.calculate_outputs(ins);
   }
 
   if(key == 'q'){
