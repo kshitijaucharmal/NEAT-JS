@@ -3,10 +3,15 @@ let gh;
 let g;
 
 let ins = [];
+let list_pos;
+let scroll_speed = 10;
 
 function setup(){
   let myCanvas = createCanvas(500, 500);
   myCanvas.parent("GameCanvas")
+
+  list_pos = createVector(width/2, height/2);
+
   gh = new GeneH();
   g = new Genome(gh);
   for(let i = 0; i< 4; i++){
@@ -21,7 +26,7 @@ function draw(){
   // settings
   if(f.show_list.checked){
       col = 0;
-      g.showGenome(col);
+      g.showGenome(col, list_pos);
   }
 }
 
@@ -53,4 +58,13 @@ function keyPressed(){
   if(key == 'q'){
       console.log(g.calculate_outputs(ins));
   }
+}
+
+function mouseWheel(event){
+    if(event.delta < 0){
+        list_pos.y += scroll_speed;
+    }
+    else if (event.delta > 0){
+        list_pos.y -= scroll_speed;
+    }
 }
