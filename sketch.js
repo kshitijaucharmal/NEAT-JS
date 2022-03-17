@@ -44,15 +44,22 @@ function add_node(){
     g.calculate_outputs(ins);
 }
 
+function mutate(){
+    g.mutate();
+    g.calculate_outputs(ins);
+}
+
 function keyPressed(){
   if(key == 'c'){
-      g.add_gene();
-      g.calculate_outputs(ins);
+      add_gene();
   }
 
   if(key == 'n'){
-      g.add_node();
-      g.calculate_outputs(ins);
+      add_node();
+  }
+
+  if(key == 'm'){
+      mutate()
   }
 
   if(key == 'q'){

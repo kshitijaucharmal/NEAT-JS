@@ -63,8 +63,8 @@ class Node{
   show(){
     push();
     stroke(0);
-    strokeWeight(2);
-    fill(255);
+    // strokeWeight(2);
+    fill(map(this.lastOutputValue, 0, 1, 255, 0), 255, 255);
     circle(this.pos.x, this.pos.y, 22);
     noStroke();
     fill(0);

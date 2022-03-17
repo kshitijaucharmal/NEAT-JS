@@ -27,6 +27,18 @@ class Gene{
     this.weight, this.enabled);
   }
 
+  mutateGene(){
+    if(random(1) < 0.1){
+      this.weight = random(-1, 1);
+    }
+    else{
+      let change = randomGaussian()/50;
+      this.weight += change;
+      if(this.weight > 1) this.weight = 1;
+      if(this.weight < -1) this.weight = -1;
+    }
+  }
+
   // For showing gene in list
   showGene(){
     let s = (this.inno+'] '+
@@ -40,7 +52,7 @@ class Gene{
   // Show Gene On Screen
   show(show_disabled){
     push();
-    strokeWeight(abs(this.weight) * 4);
+    strokeWeight(abs(this.weight * 4));
     if(this.enabled){
       if(this.weight < 0) stroke(0, 0, 255);
       else stroke(255, 0, 0);

@@ -59,6 +59,24 @@ class Genome{
     }
   }
 
+  mutate(){
+    if(this.genes.length == 0) this.add_gene();
+    
+    if(random(1) < 0.8){
+      for(let i = 0; i < this.genes.length; i++){
+        this.genes[i].mutateGene();
+      }
+    }
+    
+    if(random(1) < 0.08){
+      this.add_gene();
+    }
+    
+    if(random(1) < 0.02){
+      this.add_node();
+    }
+  }
+
   // give outputs (reason for all this)
   calculate_outputs(inputs){
     if(inputs.length != this.globals.inputs){
